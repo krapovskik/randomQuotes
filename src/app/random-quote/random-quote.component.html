@@ -1,0 +1,26 @@
+<div class="center">
+    <div *ngIf="loading ">
+        <div class="quote-wrapper">
+            <blockquote class="text">
+                <p>Loading..</p>
+            </blockquote>
+        </div>
+    </div>
+    <div *ngIf="!loading">
+        <div>
+            <div class="quote-wrapper">
+                <blockquote class="text">
+                    <p>{{ quote?.text }}</p>
+                    <footer>– {{ quote?.author }}</footer>
+                </blockquote>
+            </div>
+        </div>
+        <div class="center center-text">
+            <button class="custom-button mt" (click)="onGenerate() "> Generate random Quote </button>
+        </div>
+        <div class="center center-text">
+            <a class="custom-button" href="http://twitter.com/intent/tweet?text={{ quote?.text }}" target=" _blank "> Tweet this quote on twitter
+            </a>
+        </div>
+    </div>
+</div>
