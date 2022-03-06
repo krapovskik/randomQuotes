@@ -40,7 +40,12 @@ export class RandomQuoteComponent implements OnInit {
         this.generate.next(true);
     }
 
-    onGenerate() {
+    randomNum() {
+        return Math.floor(Math.random() * 255);
+    }
+
+    onGenerate(div: HTMLDivElement) {
+        div.style.backgroundColor = `rgb(${this.randomNum()}, ${this.randomNum()}, ${this.randomNum()})`
         this.loading = true;
         this.generate.next(true);
     }
